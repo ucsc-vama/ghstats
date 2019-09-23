@@ -5,13 +5,6 @@ import pathlib
 import sys
 import urllib.request
 
-# configuration file
-# √ creds
-# √ output dir
-# √ stats
-# √ completeness checks
-# error handling
-# √ handle first run (no file already)
 
 metrics = [
   ('clones-count', 'clones', 'count'),
@@ -36,8 +29,8 @@ def check_completeness(label, date_count_dict):
     return datetime.datetime.strptime(time_str, '%Y-%m-%dT%H:%M:%SZ')
   first_day_str = min(date_count_dict.keys())
   last_day_str = max(date_count_dict.keys())
-  num_days_in_range = (parse_time(last_day_str) - parse_time(first_day_str)).days
-  complete = num_days_in_range + 1 == len(date_count_dict)
+  num_days_in_range = (parse_time(last_day_str) - parse_time(first_day_str)).days + 1
+  complete = num_days_in_range == len(date_count_dict)
   summary = {}
   summary['start-date'] = first_day_str
   summary['end-date'] = last_day_str
