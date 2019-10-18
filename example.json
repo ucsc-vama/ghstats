@@ -1,0 +1,15 @@
+{
+  "base_dir": "/replace/with/path/to/store/data",
+  "username": "replace-with-your-github-username",
+  "token": "replace-with-your-access token",
+  "repos": [
+    {
+      "org": "replace-with-org-name1",
+      "repo": "replace-with-repo-name1"
+    },
+    {
+      "org": "replace-with-org-name2",
+      "repo": "replace-with-org-name2",
+    }
+  ]
+}
