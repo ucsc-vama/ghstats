@@ -52,7 +52,7 @@ def update_repo_data(conf, org, repo):
   for label, stat_type, field_name in metrics:
     metric_data = fetch_repo_data(conf['username'], conf['token'], org, repo, stat_type, field_name)
     repo_data_so_far[label].update(metric_data)
-    totals[label] = sum(metric_data.values())
+    totals[label] = sum(repo_data_so_far[label].values())
     # FUTURE: check all metrics for completeness?
     last_summary = check_completeness(label, repo_data_so_far[label])
   repo_data_so_far['summary'] = last_summary
